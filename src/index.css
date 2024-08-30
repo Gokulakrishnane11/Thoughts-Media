@@ -1,3 +1,10 @@
+/* Reset some default styles */  
+* {  
+  margin: 0;  
+  padding: 0;  
+  box-sizing: border-box;  
+}  
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +12,902 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;  
+  line-height: 1.6;  
+  background-color: #f4f4f4;  
+  color: #333; 
+  position: relative;
+  min-height: 100vh;
+   padding-bottom: 100px; /*Adjust this value based on your footer's height */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex-grow: 1;
+  
+}
+
+/* Add this CSS in your project's global styles or in a specific component's styles */
+
+.link-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* .link-style:hover {
+  text-decoration: underline;
+} */
+
+.header {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 20px; /* Padding around the header */
+  text-align: center; /* Center the text */
+  border-bottom: 2px solid #e9ecef; /* Light grey border at the bottom */
+}
+
+.header h1 {
+  font-size: 2rem; /* Font size for the title */
+  color: #343a40; /* Dark grey color for the text */
+  margin: 0; /* Remove default margin */
+}
+
+/* nav bar */
+
+.Nav {
+  background-color: #343a40; /* Dark grey background */
+  padding: 10px 20px; /* Padding around the nav */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+  z-index: 100; /* Stick the nav bar to the top */
+  position: sticky; /* Stick the nav bar to the top */
+  top: 0; /* Position the nav bar at the top */
+  margin-bottom: 5vh;
+  transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+}
+
+.searchForm {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Space below form on smaller screens */
+}
+
+.searchInput {
+  padding: 5px; /* Padding inside the input */
+  font-size: 1rem; /* Font size for the input */
+  border: 1px solid #ced4da; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 10px; /* Space between input and button */
+}
+
+.searchForm button {
+  padding: 5px 10px; /* Padding inside the button */
+  font-size: 1rem; /* Font size for the button */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.searchForm button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+ul {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Flexbox for layout */
+  gap: 20px; /* Space between list items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+li a {
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Font size for links */
+}
+
+li a:hover {
+  text-decoration: underline; 
+  /* Underline on hover */
+} 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Nav {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .searchForm {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px; /* Space below form */
+  }
+
+  ul {
+    flex-direction: row; /* Stack list items vertically */
+    gap: 10px; /* Reduce space between list items */
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  li {
+    width: 100%; /* Full width for list items */
+  }
+
+  li a {
+    display: block; /* Block display for links */
+    width: 100%; /* Full width for links */
+    text-align: center; /* Center text */
+    padding: 10px 0; /* Padding for links */
+    background-color: #495057; /* Slightly lighter background */
+    border-radius: 4px; /* Rounded corners */
+    transition: .3s ease-in-out;
+  }
+
+  li a:hover {
+    background-color: #6c757d; /* Darker background on hover */
+    text-decoration: none; 
+  }
+}
+
+/* home page */
+
+.home {
+  max-width: 800px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Padding around the container */
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 15vh;
+}
+
+/* Individual post container */
+.home > div {
+  margin-bottom: 20px; /* Space between posts */
+  padding: 15px; /* Padding inside each post */
+  background-color: #ffffff; /* White background for posts */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Post title */
+.home h1 {
+  font-size: 1.5rem; /* Font size for the title */
+  color: #343a40; /* Dark grey color for the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+/* Post content */
+.home p {
+  font-size: 1rem; /* Font size for the content */
+  color: #495057; /* Medium grey color for the content */
+  margin-bottom: 10px; /* Space below the content */
+}
+
+/* Date and time */
+.home p:last-of-type {
+  font-size: 0.875rem; /* Smaller font size for the date and time */
+  color: #6c757d; /* Light grey color for the date and time */
+  margin-bottom: 0; /* Remove margin below the date and time */
+}
+
+/* Horizontal rule */
+.home hr {
+  border: none; /* Remove default border */
+  border-top: 1px solid #e9ecef; /* Light grey border */
+  margin: 20px 0; /* Space around the horizontal rule */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home{
+    margin-bottom: 25vh;
+    /* height: 80vh; */
+  }
+  .home > div {
+    margin-bottom: 15px; /* Reduce space between posts on smaller screens */
+    padding: 10px; /* Reduce padding inside each post on smaller screens */
+  }
+
+  .home h1 {
+    font-size: 1.25rem; /* Reduce font size for the title on smaller screens */
+  }
+
+  .home p {
+    font-size: 0.875rem; /* Reduce font size for the content on smaller screens */
+    margin-bottom: 5px; /* Reduce space below the content on smaller screens */
+  }
+
+  .home p:last-of-type {
+    font-size: 0.75rem; /* Reduce font size for the date and time on smaller screens */
+  }
+
+  .home hr {
+    margin: 15px 0; /* Reduce space around the horizontal rule on smaller screens */
+  }
+}
+
+/* new post */
+
+.Newport {
+  max-width: 800px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Padding around the container */
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 15vh;
+}
+
+.Newport h1 {
+  font-size: 2rem; /* Font size for the title */
+  color: #343a40; /* Dark grey color for the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.Newport p {
+  font-size: 1rem; /* Font size for the paragraph */
+  color: #495057; /* Medium grey color for the paragraph */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.newpost-form {
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.newpost-form label {
+  font-size: 1rem; /* Font size for labels */
+  color: #343a40; /* Dark grey color for labels */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+.newpost-form input, .newpost-form textarea {
+  padding: 10px; /* Padding inside the input and textarea */
+  font-size: 1rem; /* Font size for the input and textarea */
+  border: 1px solid #ced4da; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below input and textarea */
+}
+
+.newpost-form textarea {
+  height: 150px; /* Height for the textarea */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.newpost-form input:focus, .newpost-form textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
+}
+
+.btn {
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 1rem; /* Font size for the button */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.01); /* Slightly enlarge the button on hover */
+}
+.btn:active {
+  transform: scale(0.99); /* Slightly reduce the button size on active state */
+  background-color: #0866cc; /* Darker blue on active state */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Newport {
+    margin-bottom: 30vh;
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .Newport h1 {
+    font-size: 1.5rem; /* Reduce font size for the title */
+  }
+
+  .Newport p {
+    font-size: 0.875rem; /* Reduce font size for the paragraph */
+  }
+
+  .newpost-form input, .newpost-form textarea {
+    font-size: 0.875rem; /* Reduce font size for the input and textarea */
+    padding: 8px; /* Reduce padding inside the input and textarea */
+  }
+
+  .btn {
+    font-size: 0.875rem; /* Reduce font size for the button */
+    padding: 8px 16px; /* Reduce padding inside the button */
+  }
+}
+
+/* missing page */
+
+.missing-page {
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  height: 100vh; /* Full viewport height */
+  background-color: #f8f9fa; /* Light grey background */
+  text-align: center; /* Center text */
+  padding: 20px; /* Padding around the container */
+}
+
+.missing-page h1 {
+  font-size: 3rem; /* Font size for the title */
+  color: #343a40; /* Dark grey color for the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.missing-page p {
+  font-size: 1.25rem; /* Font size for the paragraph */
+  color: #495057; /* Medium grey color for the paragraph */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.missing-page a {
+  font-size: 1rem; /* Font size for the link */
+  color: #007bff; /* Blue color for the link */
+  text-decoration: none; /* Remove underline */
+  border: 1px solid #007bff; /* Blue border */
+  padding: 10px 20px; /* Padding inside the link */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background color and color */
+}
+
+.missing-page a:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .missing-page {
+    /* padding: 15px; Reduce padding on smaller screens */
+    margin-bottom: 20vh;
+  }
+  .missing-page h1 {
+    font-size: 2rem; /* Reduce font size for the title */
+  }
+
+  .missing-page p {
+    font-size: 1rem; /* Reduce font size for the paragraph */
+  }
+
+  .missing-page a {
+    font-size: 0.875rem; /* Reduce font size for the link */
+    padding: 8px 16px; /* Reduce padding inside the link */
+  }
+}
+
+/* about Us */
+
+/* Container for the About Us content */  
+.about-container {  
+  max-width: 800px;  
+  margin: 40px auto;  
+  padding: 20px;  
+  background: white;  
+  border-radius: 8px;  
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+  opacity: 0; /* Start invisible */  
+  transform: translateY(20px); /* Slide down */  
+  animation: fadeInUp 1s forwards; /* Animation on load */  
+}  
+
+/* Keyframes for fadeInUp animation */  
+@keyframes fadeInUp {  
+  to {  
+    opacity: 1; /* End visible */  
+    transform: translateY(0); /* End position */  
+  }  
+}  
+
+/* Header styling */  
+.about-container h1 {  
+  font-size: 2.5rem;  
+  margin-bottom: 20px;  
+  text-align: center;  
+  color: #4CAF50; /* Primary color */  
+  animation: bounceIn 1s; /* Header bounce animation */  
+}  
+
+/* Keyframes for bounceIn animation */  
+@keyframes bounceIn {  
+  0%, 20%, 50%, 80%, 100% {  
+    transform: translateY(0);  
+  }  
+  40% {  
+    transform: translateY(-10px);  
+  }  
+  60% {  
+    transform: translateY(-5px);  
+  }  
+}  
+
+/* Paragraph styling */  
+.about-container p {  
+  font-size: 1.1rem;  
+  margin: 15px 0;  
+  line-height: 1.8;  
+  animation: fadeIn 1s ease forwards; /* Paragraph fade-in animation */  
+  opacity: 0; /* Start invisible */  
+}  
+
+.about-container p:nth-child(2) {  
+  animation-delay: 0.2s; /* Staggered animation for paragraphs */  
+}  
+
+.about-container p:nth-child(3) {  
+  animation-delay: 0.4s;  
+}  
+
+.about-container p:nth-child(4) {  
+  animation-delay: 0.6s;  
+}  
+
+/* Keyframes for fadeIn animation */  
+@keyframes fadeIn {  
+  to {  
+    opacity: 1; /* End visible */  
+  }  
+}  
+
+/* Highlighting the developer's name */  
+.dev-name {  
+  font-weight: bold;  
+  color: #4CAF50; /* Primary color */  
+}  
+
+/* Button styling */  
+.about-container .btn {  
+  display: inline-block;  
+  margin-top: 20px;  
+  padding: 10px 20px;  
+  background-color: #4CAF50;  
+  color: white;  
+  text-decoration: none;  
+  border-radius: 5px;  
+  transition: background-color 0.3s, transform 0.3s; /* Transition for background and transform */  
+  animation: fadeIn 1s ease forwards; /* Button fade-in animation */  
+  opacity: 0; /* Start invisible */  
+}  
+
+.about-container .btn:hover {  
+  background-color: #45a049;  
+  transform: scale(1.05); /* Scale up effect on hover */  
+}  
+
+/* Delay for button appearance */  
+.about-container .btn {  
+  animation-delay: 0.8s; /* Delay for button to appear */  
+}
+
+
+/* Media Query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px; /* Reduce padding on smaller screens */
+    margin-bottom: 29vh; 
+  }
+}
+
+/* *Footer styles */  
+.footer {  
+  background-color:  #343a40;;
+  color: white;
+  padding: 20px 0;
+  margin-top: 10vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}  
+
+.footer-content {  
+  display: flex;  
+  justify-content: space-between; /* Space between links and social media */  
+  max-width: 1200px; /* Max width for the footer content */  
+  margin: auto; /* Center the footer */  
+  padding: 0 20px; /* Side padding */  
+}  
+
+/* Styling for footer links */  
+.footer-links,  
+.social-media {  
+  display: flex;  
+  gap: 15px; /* Spacing between links */  
+}  
+
+.footer-links a,  
+.social-media a {  
+  color: white; /* Link color */  
+  text-decoration: none; /* No underline */  
+  transition: color 0.3s; /* Smooth transition for hover effect */  
+}  
+
+.footer-links a:hover,  
+.social-media a:hover {  
+  color: #f4f4f4; /* Change color on hover */  
+}  
+
+/* Bottom text styling */  
+.footer-bottom {  
+  text-align: center; /* Center the text */  
+  margin-top: 10px; /* Margin above the footer bottom */  
+}  
+
+/* Media Queries for Responsive Design */  
+@media (max-width: 768px) {  
+  .footer-content {  
+    flex-direction: column; /* Stack content vertically */  
+    align-items: center; 
+    /* Center align items */  
+  }  
+
+  .footer-links,  
+  .social-media {  
+    flex-direction: column; /* Stack links vertically on smaller screens */  
+    gap: 5px; /* Reduce spacing */  
+  }  
+}  
+
+@media (max-width: 480px) {  
+  .footer {  
+    padding: 15px 0; /* Reduced padding on very small screens */  
+  }  
+
+  .footer-content {  
+    padding: 0 10px; /* Less padding on very small screens */  
+  }  
+
+  .footer-links a,  
+  .social-media a {  
+    font-size: 0.9rem; /* Smaller font size for links */  
+  }  
+
+  .footer-bottom p {  
+    font-size: 0.9rem; /* Smaller font size for bottom text */  
+  }  
+}
+
+/* * post page */
+
+.post-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  margin-bottom: 3%;
+}
+
+.post {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+.post p {
+  line-height: 1.6;
+}
+
+.empty-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #f5f5f5;
+}
+
+
+.empty-post p {
+  margin-bottom: 20px;
+}
+.post-btn{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 3%;
+  transition: opacity 0.3s ease-in-out; /* Add this line */
+}
+.delete-button{
+  margin-top: 3%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fb3c07;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out; 
+  
+}
+
+.edit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 3%;
+  margin-left:2% ;
+  transition: opacity 0.3s ease-in-out; /* Add this line */
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+  opacity: 0.8; /* Add this line */
+}
+.delete-button,
+.back-home-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fb3c07;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 3%;
+  transition: opacity 0.3s ease-in-out; /* Add this line */
+}
+
+.post-btn:hover{
+  background-color: #45a049;
+  opacity: 0.8; /* Add this line */
+}
+.delete-button:hover,
+.back-home-btn:hover {
+  background-color: #fb3c07;
+  opacity: 0.8; /* Add this line */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .empty-post{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20%;
+  }
+  .post-page{
+    margin-bottom:3%;
+  }
+}
+
+/* * No posts available */
+
+.no-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.no-posts:hover {
+  background-color: #f5f5f5;
+}
+
+.no-posts p {
+  margin-bottom: 20px;
+}
+
+.no-posts button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 3%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.no-posts button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .no-posts {
+    padding: 10px;
+  }
+
+  .no-posts p {
+    margin-bottom: 10px;
+  }
+
+  .no-posts button {
+    padding: 8px 16px;
+  }
+}
+
+/* * Edit Post Page */
+
+.edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 80vh; */
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.edit-form {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.edit-form input[type="text"],
+.edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.edit-form .save-btn,
+.edit-form .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.edit-form .save-btn {
+  background-color: #4CAF50;
+  color: white;
+  /* animation: pulse 2s infinite; */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.edit-form .cancel-btn {
+  background-color: #f44336;
+  color: white;
+  /* animation: pulse 2s infinite; */
+  transition: opacity 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.edit-form .cancel-btn:hover {
+  background-color: #e53935;
+  opacity: 0.8;
+}
+
+.edit-form .save-btn:hover {
+  background-color: #45a049;
+  opacity: 0.8;
+}
+
+
+/* Button animation
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .edit-container {
+    padding: 10px;
+    margin-bottom: 10vh;
+  }
+
+  .edit-form {
+    padding: 10px;
+  }
+
+  .edit-form label {
+    font-size: 14px;
+  }
+
+  .edit-form input[type="text"],
+  .edit-form textarea {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .edit-form .save-btn,
+  .edit-form .cancel-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Styles for the "Post not found" section */
+.no-post-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.no-post-edit h2 {
+  margin-bottom: 20px;
+}
+
+.no-post-edit .back-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.no-post-edit .back-btn:hover {
+  /* background-color: #e2b80f; */
+  opacity: .8;
+}
+
+/* Responsive styles for the "Post not found" section */
+@media screen and (max-width: 600px) {
+  .no-post-edit {
+    padding: 10px;
+  }
+
+  .no-post-edit h2 {
+    font-size: 18px;
+  }
+
+  .no-post-edit .back-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 }

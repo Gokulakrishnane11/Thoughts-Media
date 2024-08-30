@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "First Post",
+      "dateTime": "July 10, 2011 at 10:00 PM",
+      "content": "This is the first post."
+    },
+    {
+      "id": 1725008804613,
+      "title": "hai",
+      "dateTime": "August 30, 2024 2:36:44 PM",
+      "content": "i am gokul"
+    },
+    {
+      "id": 1725008894583,
+      "title": "hai",
+      "dateTime": "August 30, 2024 2:38:14 PM",
+      "content": "shear your thoughts and ideas"
+    }
+  ]
+}
